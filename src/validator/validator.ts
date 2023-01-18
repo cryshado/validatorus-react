@@ -66,6 +66,11 @@ class VldBuilder {
         this._setError('')
     }
 
+    public reset () : void {
+        this._setIserr(false)
+        this._setError('')
+    }
+
     public get fname (): string { return this._fname }
 
     public get value (): string { return this._value }

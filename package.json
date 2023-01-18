@@ -1,6 +1,6 @@
 {
   "name": "validatorus-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "cryshado",
   "description": "ReactJS lightweight field validator",
