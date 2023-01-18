@@ -102,4 +102,17 @@ class VEmail implements VldType {
     }
 }
 
-export { VNumber, VLen, VUrl, VHex, VEmail }
+class VDomain implements VldType {
+    // eslint-disable-next-line max-len, no-useless-escape
+    private _regex: RegExp = /(?![\d.]+)((?!-))(xn--)?[a-z0-9][a-z0-9-_]{0,61}[a-z0-9]{0,1}\.(xn--)?([a-z0-9\._-]{1,61}|[a-z0-9-]{1,30})/gm
+
+    public check (value: string, fname: string): VldResult {
+        if (!value.match(this._regex)) {
+            return { error: `${fname} are invalid domain address` }
+        }
+
+        return {}
+    }
+}
+
+export { VNumber, VLen, VUrl, VHex, VEmail, VDomain }
