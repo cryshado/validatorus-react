@@ -3,6 +3,8 @@ import React from 'react'
 export interface VldType { check (value: string, fname: string): VldResult }
 export interface VldResult {error?: string}
 
+type IsError = 'default' | 'error' | 'valid'
+
 class VldBuilder {
     private _validators: VldType[] = [ ]
 
@@ -12,9 +14,9 @@ class VldBuilder {
 
     private _setValue: React.Dispatch<React.SetStateAction<string>>
 
-    private _iserr: boolean
+    private _iserr: IsError
 
-    private _setIserr: React.Dispatch<React.SetStateAction<boolean>>
+    private _setIserr: React.Dispatch<React.SetStateAction<IsError>>
 
     private _error: string
 
@@ -22,7 +24,7 @@ class VldBuilder {
 
     constructor () {
         const [ value, setValue ] = React.useState<string>('')
-        const [ iserr, setIserr ] = React.useState<boolean>(false)
+        const [ iserr, setIserr ] = React.useState<IsError>('default')
         const [ error, setError ] = React.useState<string>('')
 
         this._value = value
@@ -56,19 +58,19 @@ class VldBuilder {
         for (let i = 0; i < this._validators.length; i++) {
             const result = this._validators[i].check(value, this._fname)
             if (result.error) {
-                this._setIserr(true)
+                this._setIserr('error')
                 this._setError(result.error)
                 return
             }
         }
 
-        this._setIserr(false)
+        this._setIserr('valid')
         this._setError('')
     }
 
     public reset (errors: boolean = true, value: boolean = false) : void {
         if (errors) {
-            this._setIserr(false)
+            this._setIserr('default')
             this._setError('')
         }
 
