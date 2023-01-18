@@ -1,5 +1,5 @@
 # validatorus-react
-[![license](https://img.shields.io/static/v1?style=for-the-badge&message=MIT&color=red&logoColor=FFFFFF&label=license)](https://github.com/cryshado/validatorus-react/blob/main/LICENSE) [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+![npm](https://img.shields.io/npm/v/validatorus-react?color=red&style=for-the-badge) [![license](https://img.shields.io/static/v1?style=for-the-badge&message=MIT&color=green&logoColor=FFFFFF&label=license)](https://github.com/cryshado/validatorus-react/blob/main/LICENSE) [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 ReactJS lightweight field validator
 
