@@ -66,9 +66,15 @@ class VldBuilder {
         this._setError('')
     }
 
-    public reset () : void {
-        this._setIserr(false)
-        this._setError('')
+    public reset (errors: boolean = true, value: boolean = false) : void {
+        if (errors) {
+            this._setIserr(false)
+            this._setError('')
+        }
+
+        if (value) {
+            this._setValue('')
+        }
     }
 
     public get fname (): string { return this._fname }
