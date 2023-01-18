@@ -83,7 +83,7 @@ class VldBuilder {
 
     public get value (): string { return this._value }
 
-    public get iserr (): boolean { return this._iserr }
+    public get iserr (): IsError { return this._iserr }
 
     public get error (): string { return this._error }
 }
