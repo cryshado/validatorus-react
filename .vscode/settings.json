@@ -1,0 +1,10 @@
+{
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "errorLens.enabledDiagnosticLevels": ["error"],
+    "eslint.validate": ["typescript"],
+    "editor.rulers": [80],
+    "[prisma]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Prisma.prisma"
+    }
+}
